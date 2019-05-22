@@ -12,8 +12,7 @@ The random direction(s) and loss surface values are stored in HDF5 (`.h5`) files
 ## Setup
 
 **Environment**: One or more multi-GPU node(s) with the following software/libraries installed:
-- [PyTorch 0.4](https://pytorch.org/)
-- [openmpi 3.1.2](https://www.open-mpi.org/)
+- [Tensorflow 1.13](https://pytorch.org/)
 - [numpy 1.15.1](https://docs.scipy.org/doc/numpy/user/quickstart.html)  
 - [h5py 2.7.0](http://docs.h5py.org/en/stable/build.html#install)
 - [matplotlib 2.0.2](https://matplotlib.org/users/installing.html)
