@@ -1,7 +1,6 @@
 # Visualizing the Loss Landscape of Neural Nets
 
-
-This repository contains the PyTorch code for the paper
+This repository contains the tf.Keras implementation of the code for the paper
 > Hao Li, Zheng Xu, Gavin Taylor, Christoph Studer and Tom Goldstein. [*Visualizing the Loss Landscape of Neural Nets*](https://arxiv.org/abs/1712.09913). NIPS, 2018.
 
 An [interactive 3D visualizer](http://www.telesens.co/loss-landscape-viz/viewer.html) for loss surfaces has been provided by [telesens](http://www.telesens.co/2019/01/16/neural-network-loss-visualization/).
@@ -15,21 +14,10 @@ The random direction(s) and loss surface values are stored in HDF5 (`.h5`) files
 **Environment**: One or more multi-GPU node(s) with the following software/libraries installed:
 - [PyTorch 0.4](https://pytorch.org/)
 - [openmpi 3.1.2](https://www.open-mpi.org/)
-- [mpi4py 2.0.0](https://mpi4py.scipy.org/docs/usrman/install.html)
 - [numpy 1.15.1](https://docs.scipy.org/doc/numpy/user/quickstart.html)  
 - [h5py 2.7.0](http://docs.h5py.org/en/stable/build.html#install)
 - [matplotlib 2.0.2](https://matplotlib.org/users/installing.html)
 - [scipy 0.19](https://www.scipy.org/install.html)
-
-**Pre-trained models**:
-The code accepts pre-trained PyTorch models for the CIFAR-10 dataset.
-To load the pre-trained model correctly, the model file should contain `state_dict`, which is saved from the `state_dict()` method.
-The default path for pre-trained networks is `cifar10/trained_nets`.
-Some of the pre-trained models and plotted figures can be downloaded here:
-- [VGG-9](https://drive.google.com/open?id=1jikD79HGbp6mN1qSGojsXOZEM5VAq3tH) (349 MB)
-- [ResNet-56](https://drive.google.com/a/cs.umd.edu/file/d/12oxkvfaKcPyyHiOevVNTBzaQ1zAFlNPX/view?usp=sharing) (10 MB)
-- [ResNet-56-noshort](https://drive.google.com/a/cs.umd.edu/file/d/1eUvYy3HaiCVHTzi3MHEZGgrGOPACLMkR/view?usp=sharing) (20 MB)
-- [DenseNet-121](https://drive.google.com/a/cs.umd.edu/file/d/1oU0nDFv9CceYM4uW6RcOULYS-rnWxdVl/view?usp=sharing) (75 MB)
 
 **Data preprocessing**:
 The data pre-processing method used for visualization should be consistent with the one used for model training.
@@ -111,25 +99,3 @@ python h52vtp.py --surf_file path_to_surf_file --surf_name train_loss --zmax  10
    This will generate a [VTK](https://www.kitware.com/products/books/VTKUsersGuide.pdf) file containing the loss surface with max value 10 in the log scale.
 
 2. Open the `.vtp` file with ParaView. In ParaView, open the `.vtp` file with the VTK reader. Click the eye icon in the `Pipeline Browser` to make the figure show up. You can drag the surface around, and change the colors in the `Properties` window.
-
-3. If the surface appears extremely skinny and needle-like, you may need to adjust the "transforming" parameters in the left control panel.  Enter numbers larger than 1 in the "scale" fields to widen the plot.
-
-4. Select `Save screenshot` in the File menu to save the image.
-
-## Reference
-
-[1] Ian J Goodfellow, Oriol Vinyals, and Andrew M Saxe. Qualitatively characterizing neural network optimization problems. ICLR, 2015.
-
-[2] Nitish Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy, and Ping Tak Peter Tang. On large-batch training for deep learning: Generalization gap and sharp minima. ICLR, 2017.
-
-## Citation
-If you find this code useful in your research, please cite:
-
-```
-@inproceedings{visualloss,
-  title={Visualizing the Loss Landscape of Neural Nets},
-  author={Li, Hao and Xu, Zheng and Taylor, Gavin and Studer, Christoph and Goldstein, Tom},
-  booktitle={Neural Information Processing Systems},
-  year={2018}
-}
-```
