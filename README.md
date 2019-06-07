@@ -1,6 +1,6 @@
-# Visualizing the Loss Landscape of Neural Nets
+# Visualizing the Loss Landscape of Neural Networks
 
-This repository contains the tf.Keras implementation of the code for the paper
+The code in this repository calculates loss landscapes for arbitrary Keras and tf.Keras models. The algorithm is based on the following paper:
 > Hao Li, Zheng Xu, Gavin Taylor, Christoph Studer and Tom Goldstein. [*Visualizing the Loss Landscape of Neural Nets*](https://arxiv.org/abs/1712.09913). NIPS, 2018.
 
 An [interactive 3D visualizer](http://www.telesens.co/loss-landscape-viz/viewer.html) for loss surfaces has been provided by [telesens](http://www.telesens.co/2019/01/16/neural-network-loss-visualization/).
@@ -12,7 +12,7 @@ The random direction(s) and loss surface values are stored in HDF5 (`.h5`) files
 ## Setup
 
 **Environment**: One or more multi-GPU node(s) with the following software/libraries installed:
-- [Tensorflow 1.13](https://pytorch.org/)
+- [Tensorflow 1.13](https://www.tensorflow.org/)
 - [numpy 1.15.1](https://docs.scipy.org/doc/numpy/user/quickstart.html)  
 - [h5py 2.7.0](http://docs.h5py.org/en/stable/build.html#install)
 - [matplotlib 2.0.2](https://matplotlib.org/users/installing.html)
